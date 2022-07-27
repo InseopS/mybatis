@@ -18,6 +18,15 @@
 	</resultMap>
 	 -->
 	 
+	<!-- 생성자 방식의 DI -->
+	<resultMap id='userMap' type='ch04.domain.User'>
+		<constructor>
+			<idArg column='user_id' javaType='_int'/>
+			<arg column='user_name' javaType='string'/>
+			<arg column='reg_date' javaType='java.time.LocalDate'/>
+		</constructor>
+		<collection property='posts' resultMap='postMap'/>
+	</resultMap>
 	 
 	<resultMap id='postMap' type='ch04.domain.Post'>
 		<result property='title' column='post_title'/>
