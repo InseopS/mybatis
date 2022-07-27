@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='ch04.ex02.Map'>
+	<select id='selectUsers' resultMap='userMap'>
+		select users.user_id, user_name, reg_date, post_title, post_content
+		from users join posts
+		on users.user_id = posts.user_id
+		order by users.user_id
+	</select>
+	
+	<!-- setter 방식의 DI
+	<resultMap id='userMap' type='ch04.domain.User'>
+		<id property='userId' column='user_id'/>
+		<result property='userName' column='user_name'/>
+		<result property='regDate' column='reg_date'/>
+		<collection property='posts' resultMap='postMap'/>
+	</resultMap>
+	 -->
+	 
+	 
+	<resultMap id='postMap' type='ch04.domain.Post'>
+		<result property='title' column='post_title'/>
+		<result property='content' column='post_content'/>
+	</resultMap>
+</mapper>
