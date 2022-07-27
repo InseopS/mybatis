@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE configuration PUBLIC './/mybatis.org//DTD config 3.0//EN'
+	'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+<!-- roottag 가장 바깥에 있는 부모 tag -->
+<!-- starttag 태그의 시작 -->
+<configuration> 
+	<properties resource='config/jdbc.properties'>
+		<property name='driver' value='oracle.jdbc.driver.OracleDriver'/> 
+		<!-- 시작과 끝으로 둘러쌀 필요가 없는 경우 끝 태그 생략 가능하고 생략 시 끝에 / 기입 -->
+	</properties>
+	
+	<typeAliases>
+		<typeAlias type='ch02.domain.User' alias='user'/>
+		<package name='ch03.domain'/>
+		<!-- 별명 자동 부여 시 클래스 이름을 따른 것 1개,
+		소문자로 변환된 별명 1개 해서 2개가 부여된다. -->
+	</typeAliases>
+	
+	<environments default='development'>
+		<environment id ='development'>
+			<transactionManager type='JDBC'/>
+			<dataSource type='POOLED'>
+				<property name='driver' value='${driver}'/><!-- EL(Expression Language) --> 
+				<property name='url' value='${url}'/>
+				<property name='username' value='${username}'/>
+				<property name='password' value='${password}'/>
+			</dataSource>			
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource='ch02/ex01/sqlMap.xml'/>
+		<mapper resource='ch02/ex02/sqlMap.xml'/>
+		<mapper resource='ch02/ex03/sqlMap.xml'/>
+		<mapper resource='ch02/ex04/sqlMap.xml'/>
+		<mapper resource='ch02/ex05/sqlMap.xml'/>
+		<mapper resource='ch03/ex01/sqlMap.xml'/>
+		<mapper resource='ch03/ex02/sqlMap.xml'/>
+		<mapper resource='ch04/ex01/sqlMap.xml'/>
+	</mappers>	
+</configuration>
+<!-- endtag 태그의 끝 -->
+<!-- 클래스 경로 연결문자는 (.)점, 아니면 / -->
