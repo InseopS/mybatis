@@ -1,12 +1,12 @@
-package ch02.ex05;
+package ch05.ex04;
 
+import ch05.domain.User;
 import config.Configuration;
 
 public class Main {
 	public static void main(String[] args) {
 		Map mapper = Configuration.getMapper(Map.class);
 		
-		if(mapper.deleteUser(11) > 0)
-			System.out.println("¼º°ø");
+		System.out.println(mapper.updateUser(new User(2, "king", null)));
 	}
 }

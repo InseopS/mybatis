@@ -1,4 +1,4 @@
-package ch02.ex05;
+package ch05.ex05;
 
 import config.Configuration;
 
@@ -6,7 +6,6 @@ public class Main {
 	public static void main(String[] args) {
 		Map mapper = Configuration.getMapper(Map.class);
 		
-		if(mapper.deleteUser(11) > 0)
-			System.out.println("¼º°ø");
+		System.out.println(mapper.selectUser("king"));
 	}
 }

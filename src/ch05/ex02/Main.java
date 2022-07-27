@@ -1,4 +1,4 @@
-package ch05.ex01;
+package ch05.ex02;
 
 import ch05.domain.Post;
 import ch05.domain.Search;
@@ -8,15 +8,11 @@ import config.Configuration;
 public class Main {
 	public static void main(String[] args) {
 		Map mapper = Configuration.getMapper(Map.class);
-		
-		User user = mapper.selectUser(new Search("john", null));
-		
-		//isEmpty() 적용 전
-		//user = mapper.selectUser(new Search("john", new Post("정의", null)));
+		User user = mapper.selectUser(new Search("john", new Post(null, null)));
+		user = mapper.selectUser(new Search("john", new Post("정의", null)));
 		user = mapper.selectUser(new Search("john", new Post(null, "고리")));
-		
-		//isEmpty() 적용 후
-		user = mapper.selectUser(new Search("john", new Post("정의", "")));
+		// choose 사용으로 앞에 조건만 맞아도 결과값이 나온다.
+		user = mapper.selectUser(new Search("john", new Post("정의", "ㄴㅁㅇㅁㄴㅇ")));
 		
 		System.out.println(user);
 	}

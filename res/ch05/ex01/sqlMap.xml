@@ -10,7 +10,7 @@
 		<if test='post != null and post.title != null'>
 			and post_title like '%' || #{post.title} || '%'
 		</if>
-		<if test='post != null and post.content != null'>
+		<if test='post != null and !post.content.isEmpty()'>
 			and post_content like '%' || #{post.content} || '%'
 		</if>
 	</select>
