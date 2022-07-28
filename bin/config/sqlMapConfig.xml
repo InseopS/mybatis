@@ -5,10 +5,13 @@
 <!-- starttag 태그의 시작 -->
 <configuration> 
 	<properties resource='config/jdbc.properties'>
-		<property name='driver' value='oracle.jdbc.driver.OracleDriver'/> 
-		<!-- 시작과 끝으로 둘러쌀 필요가 없는 경우 끝 태그 생략 가능하고 생략 시 끝에 / 기입 -->
-	</properties>
-	
+		<property name='driver' value='oracle.jdbc.driver.OracleDriver'/>		
+	</properties>	
+
+ <!-- 시작과 끝으로 둘러쌀 필요가 없는 경우 끝 태그 생략 가능하고 생략 시 끝에 / 기입 -->
+
+	<!-- settings는 typeAliases 위에 선언해야한다. -->
+
 	<typeAliases>
 		<typeAlias type='ch02.domain.User' alias='user'/>
 		<package name='ch03.domain'/>
@@ -28,6 +31,7 @@
 		</environment>
 	</environments>
 	<mappers>
+	<!-- 
 		<mapper resource='ch02/ex01/sqlMap.xml'/>
 		<mapper resource='ch02/ex02/sqlMap.xml'/>
 		<mapper resource='ch02/ex03/sqlMap.xml'/>
@@ -44,6 +48,11 @@
 		<mapper resource='ch05/ex05/sqlMap.xml'/>
 		<mapper resource='ch05/ex06/sqlMap.xml'/>
 		<mapper resource='ch05/ex07/sqlMap.xml'/>
+
+		 -->
+		<mapper class='ch07.ex01.Map'/>
+		<mapper class='ch07.ex02.Map'/>
+		<mapper class='ch07.ex03.Map'/>		
 	</mappers>	
 </configuration>
 <!-- endtag 태그의 끝 -->

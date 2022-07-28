@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
 	'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
 <mapper namespace='ch05.ex07.Map'>
-	<select id='selectUsers' resultType='userMap'>
+	<select id='selectUsers' resultMap='userMap'>
 		<include refid='selectUser'/>
 		where user_id in
 		<foreach item='userId' collection='array' open='(' separator=',' close=')'>
@@ -10,10 +10,10 @@
 		</foreach>		
 	</select>
 	
-		<select id='selectUsers2' resultType='userMap'>
+		<select id='selectUsers2' resultMap='userMap'>
 		<include refid='selectUser'/>
 		where user_name in
-		<foreach item='userName' collection='array' open='(' separator=',' close=')'>
+		<foreach item='userName' collection='list' open='(' separator=',' close=')'>
 			#{userName}
 		</foreach>		
 	</select>

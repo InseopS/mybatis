@@ -11,12 +11,16 @@ public class Configuration {
 	
 	static {
 		try {
+			
 			Reader reader = Resources.getResourceAsReader("config/sqlMapConfig.xml");
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+			
+//			InputStream stream = Resources.getResourceAsStream("config/sqlMapConfig.xml");
+//			sqlSessionFactory = new SqlSessionFactoryBuilder().build(stream, "hr");
 		} catch(Exception e) {}
 	}
-	
+
 	public static <T> T getMapper(Class<T> arg) {
-		return sqlSessionFactory.openSession(true).getMapper(arg); // dml도 오토커밋하라는 명령
+		return sqlSessionFactory.openSession(true).getMapper(arg);
 	}
 }
