@@ -26,3 +26,27 @@ if는 앞 조건이 참이어도 남은 조건까지 확인
 choose는 참이 나오면 뒷 내용은 패스
 
 시작과 끝으로 둘러쌀 필요가 없는 경우 끝 태그 생략 가능하고 생략 시 끝에 / 기입
+
+
+
+산출물
+최한석.hr.mybatis.zip
+최한석.hr.sql
+
+요구사항
+-hr.java 요구사항들을 상속한다.
+
+4.1 프로젝트명은 최한석.hr.mybatis 이다.
+
+7.1 강사가 제공한 hr.java 를 mybatis 버전으로 고도화 한다.
+7.2 hr.java 의 dao 를 교체한다.
+7.3 hr.java 의 Main 을 수정한다.
+7.4 hr.java 의 service, presentation은 수정 안 한다.
+7.5 com.my.hr.config 패키지에 mybatis 설정 클래스나 파일을 둔다.
+
+최한석.hr.sql
+7.1 drop user, create user, grant, create table, create sequence 등의 명령어들을 나열된 순서대로 기술한다.
+7.2 username/password 는 hr2/hr2 이다.
+7.3 query 나 DML 은 기술하지 않는다.
+7.4 sqlplus -s system/oracle <최한석.hr.sql, 로 실행한다.
+7.5 위 실행으로, hr.mybatis 앱에서 사용할 DB를 구현한다.

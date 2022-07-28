@@ -1,15 +1,15 @@
-package ch02.ex04;
+package ch07.ex04;
 
 import java.time.LocalDate;
 
-import ch02.domain.User;
+import ch07.domain.User;
 import config.Configuration;
 
 public class Main {
 	public static void main(String[] args) {
 		Map mapper = Configuration.getMapper(Map.class);
 		
-		if(mapper.updateUser(new User(11, "king", LocalDate.of(2027, 7, 12))) > 0)
-			System.out.println("¼º°ø");
+		System.out.println(mapper.updateUser(
+				new User(11, "grant", LocalDate.of(2030, 3, 3))));
 	}
 }

@@ -10,7 +10,7 @@
 		</foreach>		
 	</select>
 	
-		<select id='selectUsers2' resultMap='userMap'>
+	<select id='selectUsers2' resultMap='userMap'>
 		<include refid='selectUser'/>
 		where user_name in
 		<foreach item='userName' collection='list' open='(' separator=',' close=')'>

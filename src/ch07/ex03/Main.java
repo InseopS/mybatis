@@ -10,6 +10,6 @@ public class Main {
 		Map mapper = Configuration.getMapper(Map.class);
 		
 		System.out.println(mapper.insertUser(
-				new User(11, null, LocalDate.of(2025, 5, 25))));
+				new User(16, null, LocalDate.of(2025, 5, 25))));
 	}
 }

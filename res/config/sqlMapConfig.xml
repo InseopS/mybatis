@@ -45,14 +45,16 @@
 		<mapper resource='ch05/ex02/sqlMap.xml'/>
 		<mapper resource='ch05/ex03/sqlMap.xml'/>
 		<mapper resource='ch05/ex04/sqlMap.xml'/>
-		<mapper resource='ch05/ex05/sqlMap.xml'/>
+		<mapper resource='ch05/ex05/sqlMap.xml'/>	
 		<mapper resource='ch05/ex06/sqlMap.xml'/>
 		<mapper resource='ch05/ex07/sqlMap.xml'/>
 
 		 -->
 		<mapper class='ch07.ex01.Map'/>
 		<mapper class='ch07.ex02.Map'/>
-		<mapper class='ch07.ex03.Map'/>		
+		<mapper class='ch07.ex03.Map'/>
+		<mapper class='ch07.ex04.Map'/>
+		<mapper class='ch07.ex05.Map'/>			
 	</mappers>	
 </configuration>
 <!-- endtag 태그의 끝 -->
